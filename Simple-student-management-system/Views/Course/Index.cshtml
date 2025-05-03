@@ -1,0 +1,51 @@
+﻿@model List<Course>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #bcc7e7;
+    }
+</style>
+<div class="mb-3 mt-3 text-center">
+    <h1>All Courses</h1>
+</div>
+
+<div class="container mb-3">
+    <div class="d-flex gap-2">
+        <a href="/Course/NewCourse" class="btn btn-success flex-fill">Create New Course</a>
+        <a href="/Home/Index" class="btn btn-success flex-fill">Home Page</a>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="p-4 rounded shadow" style="background-color: #f8f9fa;">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center align-middle mb-0 bg-white rounded">
+                <thead class="table-light">
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Course Houres</th>
+                        <th>Course Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var crs in Model)
+                    {
+                        <tr>
+                            <td>@crs.Code</td>
+                            <td>@crs.Name</td>
+                            <td>@crs.Hours</td>
+                            <td>
+                                <a href="/Course/Details?code=@crs.Code" class="btn btn-sm btn-outline-primary">
+                                    Details
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

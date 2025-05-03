@@ -1,0 +1,35 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #bcc7e7;
+    }
+</style>
+
+<div class="mb-3 mt-3 text-center">
+    <h1>Details</h1>
+</div>
+
+<div class="container my-4">
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h3 class="card-title mb-3">Course Information</h3>
+            <ul class="list-group list-group-flush">               
+                <li class="list-group-item"><strong>Name : </strong> @Model.Name</li>
+                <li class="list-group-item"><strong>Code : </strong> @Model.Code</li>
+                <li class="list-group-item"><strong>Hours : </strong> @Model.Hours</li>
+            </ul>
+        </div>
+    </div>
+</div>
+   
+<div class="container mb-3">
+    <div class="d-flex gap-2">
+        <a href="/Course/Index" class="btn btn-primary flex-fill">Show All Courses</a>
+    </div>
+</div>

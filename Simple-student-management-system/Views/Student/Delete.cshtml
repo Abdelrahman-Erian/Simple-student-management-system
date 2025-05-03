@@ -1,0 +1,43 @@
+﻿@model Student
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #bcc7e7;
+    }
+
+    h1 {
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+</style>
+
+<div class="mb-3 mt-3 text-center">
+    <h1>Delete Student</h1>
+</div>
+<div class="container my-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h3 class="mb-0">Student Information</h3>
+        </div>
+        <div class="card-body">
+            <div class="mb-4">
+                <strong>Student Name : </strong> @Model.Name
+            </div>
+
+            <div class="mb-3">
+                <strong>Student ID : </strong> @Model.StudentID
+            </div>
+
+            <div class="mb-3">
+                <strong>Student Email : </strong> @Model.Email
+            </div>
+
+            <div class="text-center">
+                <a href="/Student/index" class="btn btn-primary btn-lg">Show All Students</a>
+            </div>
+        </div>
+    </div>
+</div>

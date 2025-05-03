@@ -1,0 +1,170 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f4ff;
+    }
+
+    nav {
+        width: 100%;
+        background: linear-gradient(90deg, #0056d6, #0066ff);
+        padding: 15px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        box-sizing: border-box;
+        border-radius: 30px;
+    }
+
+    .nav-left {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        margin-right: 40px;
+        white-space: nowrap;
+    }
+
+    .nav-right {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .nav-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 8px 12px;
+        border-radius: 8px;
+    }
+
+    .nav-section-title {
+        color: #e0ecff;
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+
+    .nav-link, button {
+        background-color: transparent;
+        border: 2px solid #cce0ff;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s;
+    }
+
+        .nav-link:hover, button:hover {
+            background-color: #cce0ff;
+            color: #003399;
+        }
+
+    input[type="text"] {
+        height: 38px;
+        padding: 8px 10px;
+        border-radius: 6px;
+        border: none;
+        font-size: 15px;
+        width: 160px;
+    }
+
+    .form-inline {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .container {
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+    }
+
+    p {
+        font-size: 18px;
+        color: #555;
+    }
+</style>
+
+<nav>
+    <!-- Student Management Section -->
+
+    <div class="nav-left">Student Management</div>
+
+    <div class="nav-right">
+        
+        <div class="nav-section">
+            <a class="nav-link" href="/Student/Index">Show All Students</a>
+        </div>
+
+        <div class="nav-section">
+            <a class="nav-link" href="/Student/NewStudent">Add</a>
+        </div>
+
+        <div class="nav-section">
+            <span class="nav-section-title">Delete Student</span>
+            <form method="post" action="/Student/Delete" class="form-inline">
+                <input type="text" inputmode="numeric" name="id" placeholder="Enter Student ID" required />
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+
+        <div class="nav-section">
+            <span class="nav-section-title">Edit Student</span>
+            <form method="post" action="/Student/Edit" class="form-inline">
+                <input type="text" inputmode="numeric" name="id" placeholder="Enter Student ID" required />
+                <button type="submit">Edit</button>
+            </form>
+        </div>
+
+        <div class="nav-section">
+            <span class="nav-section-title">Student Details</span>
+            <form method="post" action="/Student/Details" class="form-inline">
+                <input type="text" inputmode="numeric" name="id" placeholder="Enter Student ID" required />
+                <button type="submit">Details</button>
+            </form>
+        </div>
+
+        <div style="width: 100%; border-top: 2px solid #cce0ff; margin: 10px 0;"></div>
+
+        <!-- Course Management Section -->
+        <div class="nav-left">Course Management</div>
+
+        <div class="nav-section">
+            <a class="nav-link" href="/Course/Index">Show All Courses</a>
+        </div>
+
+        <div class="nav-section">
+            <a class="nav-link" href="/Course/NewCourse">Create Course</a>
+        </div>
+
+        <div class="nav-section">
+            <span class="nav-section-title">Course Details</span>
+            <form method="post" action="/Course/Details">
+                <input type="text" name="code" placeholder="Enter Course ID" required />
+                <button type="submit">Details</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Welcome to the Student Management System</h1>
+    <p>Use the navigation bar to manage students and courses.</p>
+</div>

@@ -1,0 +1,62 @@
+﻿@model List<Course>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #bcc7e7;
+    }
+
+    h1 {
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+</style>
+
+<div class="mb-3 mt-3 text-center">
+    <h1>Register for Courses</h1>
+</div>
+
+<form method="post" action="/Student/SaveRegisterCourses/@ViewBag.StudentId">
+    <div class="mb-3">
+        <label class="form-label fw-bold">Courses1 :</label>
+        <select name="Courses1" class="form-control">
+            @foreach (var item in Model)
+            {                
+                    <option value="@item.ID">@item.Name</option>             
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label fw-bold">Courses2 :</label>
+        <select name="Courses2" class="form-control">
+            @foreach (var item in Model)
+            {
+                <option value="@item.ID">@item.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label fw-bold">Courses3 :</label>
+        <select name="Courses3" class="form-control">
+            @foreach (var item in Model)
+            {
+                <option value="@item.ID">@item.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label fw-bold">Courses4 :</label>
+        <select name="Courses4" class="form-control">
+            @foreach (var item in Model)
+            {
+                <option value="@item.ID">@item.Name</option>
+            }
+        </select>
+    </div>
+    <div class="d-flex justify-content-center mb-3">
+        <button type="submit" class="btn btn-primary w-50">Register</button>
+    </div>
+</form>
+

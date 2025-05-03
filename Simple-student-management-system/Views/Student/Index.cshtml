@@ -1,0 +1,58 @@
+﻿@model List<Student>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #bcc7e7;
+    }
+
+    h1 {
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+</style>
+<div class="mb-3 mt-3 text-center">
+    <h1>All Students</h1>
+</div>
+
+<div class="container mb-3">
+    <div class="d-flex gap-2">
+        <a href="/Student/NewStudent" class="btn btn-success flex-fill">Create New Student</a>
+        <a href="/Home/Index" class="btn btn-success flex-fill">Home Page</a>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="p-4 rounded shadow" style="background-color: #f8f9fa;">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center align-middle mb-0 bg-white rounded">
+                <thead class="table-light">
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Student Email</th>
+                        <th>Student Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var St in Model)
+                    {
+                        <tr>
+                            <td>@St.StudentID</td>
+                            <td>@St.Name</td>
+                            <td>@St.Email</td>
+                            <td>
+                                <a href="/Student/Details/@St.StudentID" class="btn btn-sm btn-outline-primary">
+                                    Profile
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
